@@ -152,7 +152,8 @@ export default function App() {
         imageSize,
         useSearch,
         base64Image: uploadImage?.data,
-        mimeType: uploadImage?.mimeType
+        mimeType: uploadImage?.mimeType,
+        apiKey: yourKey,
       });
 
       const newImage: GeneratedImage = {

@@ -8,8 +8,9 @@ export async function generateImage(params: {
   useSearch: boolean;
   base64Image?: string;
   mimeType?: string;
+  apiKey: string;
 }) {
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const ai = new GoogleGenAI({ apiKey: params.apiKey });
   const model = ai.models.generateContent({
     model: "gemini-3-pro-image-preview",
     contents: {
