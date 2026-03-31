@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-primary: #00FF00;
+  --color-brand-secondary: #141414;
+  --color-brand-bg: #F5F5F5;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-secondary font-sans antialiased;
+  }
+}
+
+@utility brutal-border {
+  border-width: 2px;
+  border-color: var(--color-brand-secondary);
+  box-shadow: 4px 4px 0px 0px rgba(20,20,20,1);
+}
+
+@utility brutal-button {
+  @apply brutal-border bg-white px-4 py-2 font-bold transition-all;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(20,20,20,1);
+  }
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0px 0px rgba(20,20,20,1);
+  }
+}
+
+@utility brutal-input {
+  @apply brutal-border bg-white p-3;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.5), 4px 4px 0px 0px rgba(20,20,20,1);
+  }
+}
+
